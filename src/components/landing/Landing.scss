@@ -1,0 +1,526 @@
+// Variables
+$primary-blue: #1e3a8a;
+$primary-blue-dark: #1e40af;
+$light-blue: #bfdbfe;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-900: #111827;
+$white: #ffffff;
+
+$max-width: 100vw;
+$transition: all 0.3s ease;
+
+// Base styles
+.container {
+  min-height: 100vh;
+  background-color: $white;
+  color: $gray-900;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+// Navigation
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  transition: $transition;
+  
+  &--scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  &--transparent {
+    background-color: transparent;
+    padding: 16px 0;
+  }
+}
+
+.nav__container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  &--light {
+    color: $white;
+  }
+  
+  &--dark {
+    color: $primary-blue;
+  }
+}
+
+.nav__links {
+  display: flex;
+  gap: 32px;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav__link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+  
+  &--light {
+    color: $white;
+    
+    &:hover {
+      color: $light-blue;
+    }
+  }
+  
+  &--dark {
+    color: $gray-700;
+    
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/images/race2\ copy.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero__container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+}
+
+.hero__text {
+  max-width: 600px;
+}
+
+.hero__title {
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: $white;
+  line-height: 1.1;
+  text-transform: uppercase;
+  
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.hero__subtitle {
+  font-size: 24px;
+  margin-bottom: 32px;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: $transition;
+  
+  &--primary {
+    background-color: $primary-blue;
+    color: $white;
+    
+    &:hover {
+      background-color: $primary-blue-dark;
+    }
+  }
+  
+  &--secondary {
+    background-color: $white;
+    color: $primary-blue;
+    
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+  
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+    
+    &:hover {
+      background-color: $white;
+      color: $primary-blue;
+    }
+  }
+}
+
+// Stats Section
+.stats {
+  background-color: $primary-blue;
+  padding: 0;
+}
+
+.stats__container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stats__item {
+  text-align: center;
+  padding: 48px 0;
+  
+  &:not(:last-child) {
+    border-right: 1px solid $primary-blue-dark;
+  }
+}
+
+.stats__label {
+  font-size: 14px;
+  color: $light-blue;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.stats__value {
+  font-size: 32px;
+  font-weight: bold;
+  color: $white;
+}
+
+// Sections
+.section {
+  padding: 80px 0;
+  
+  &--gray {
+    background-color: $gray-100;
+  }
+  
+  &--white {
+    background-color: $white;
+  }
+  
+  &--blue {
+    background-color: $primary-blue;
+  }
+}
+
+.section__container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section__title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: $primary-blue;
+  text-transform: uppercase;
+  
+  &--white {
+    color: $white;
+    text-align: center;
+  }
+  
+  &--small {
+    font-size: 36px;
+  }
+}
+
+.section__subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: $gray-900;
+}
+
+// Grid layouts
+.grid {
+  display: grid;
+  gap: 64px;
+  
+  &--two-col {
+    grid-template-columns: repeat(2, 1fr);
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &--four-col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// About Section
+.about__image {
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.about__content {
+  padding-top: 32px;
+}
+
+.about__text {
+  font-size: 18px;
+  color: $gray-700;
+  margin-bottom: 24px;
+  line-height: 1.8;
+  
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Results Section
+.results__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.results__item {
+  text-align: center;
+}
+
+.results__box {
+  background-color: $gray-100;
+  padding: 24px;
+  margin-bottom: 8px;
+}
+
+.results__number {
+  font-size: 36px;
+  font-weight: bold;
+  color: $gray-400;
+}
+
+.results__label {
+  font-size: 14px;
+  color: $gray-600;
+}
+
+// Sponsors Section
+.sponsors__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.sponsors__box {
+  background-color: #fff;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.sponsors__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sponsors__text {
+  color: $gray-400;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+// Events Section
+.event__date {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: $gray-900;
+}
+
+.event__location {
+  font-size: 20px;
+  color: $gray-600;
+  margin-bottom: 16px;
+}
+
+.event__countdown {
+  font-size: 14px;
+  color: $gray-500;
+  text-transform: uppercase;
+}
+
+// Gallery Section
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding-bottom: 100%;
+}
+
+.gallery__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Contact Section
+.contact__container {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.contact__text {
+  font-size: 20px;
+  margin-bottom: 48px;
+  color: $light-blue;
+  max-width: 672px;
+  margin: 0 auto 48px;
+}
+
+.contact__buttons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.contact__social {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.contact__icon {
+  color: $white;
+  cursor: pointer;
+  transition: color 0.3s;
+  
+  &:hover {
+    color: $light-blue;
+  }
+}
+
+.contact__info {
+  color: $light-blue;
+  
+  p {
+    margin-bottom: 8px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Footer
+.footer {
+  padding: 32px 0;
+  background-color: $white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer__container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.footer__logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-blue;
+  margin-bottom: 16px;
+}
+
+.footer__text {
+  color: $gray-600;
+}
