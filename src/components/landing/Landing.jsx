@@ -28,7 +28,7 @@ const Landing = () => {
   const stats = [
     { value: '14', label: 'Age' },
     { value: 'Downhill, Super-G', label: 'Specialty' },
-    { value: '8th', label: 'Current Ranking' },
+    { value: '5th', label: 'Current Ranking' },
     { value: '10', label: 'Podiums' }
   ];
 
