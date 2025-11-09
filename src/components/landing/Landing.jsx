@@ -6,6 +6,7 @@ import Bodie2 from '../../assets/images/bodie2.webp';
 import Bodie from '../../assets/images/bodie.webp';
 import Portrait from '../../assets/images/portrait1.jpg';
 import Race from '../../assets/images/racePortrait.webp';
+import Standing from '../../assets/images/standing.webp';
 
 import Atomic from '../../assets/logos/atomic.png';
 import JPMorgan from '../../assets/logos/jpMorgan.webp';
@@ -115,14 +116,16 @@ const Landing = () => {
           <div className="grid grid--two-col">
             <div>
               <img 
-                src={AboutImage}
+                src={Standing}
                 alt="Bodie Morgan Portrait"
                 className="about__image"
               />
             </div>
             <div className="about__content">
               <h2 className="section__title">About</h2>
-              <p className="about__text">
+              <h2 className="about__subtitle">
+                Under Construction</h2>
+              {/* <p className="about__text">
                 From racing the slopes as a junior in British Columbia to competing on the world stage, 
                 my commitment to excellence has driven my journey / aim to push my limits and reach 
                 new heights in downhill skiing.
@@ -131,7 +134,7 @@ const Landing = () => {
                 With years of dedication and countless hours perfecting my craft, I continue to challenge 
                 myself on the most demanding courses around the globe. My focus remains on speed, 
                 precision, and pushing the boundaries of what's possible.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -217,10 +220,10 @@ const Landing = () => {
       <section id="contact" className="section section--blue">
         <div className="contact__container">
           <h2 className="section__title section__title--white">Ready to Partner?</h2>
-          <p className="contact__text">
+          {/* <p className="contact__text">
             Join me in pushing the limits of downhill skiing. Let's create something extraordinary together 
             and reach new heights in extreme sports marketing.
-          </p>
+          </p> */}
           <div className="contact__buttons">
             <button className="btn btn--secondary">
               Sponsorship Deck
